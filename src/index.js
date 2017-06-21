@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import WeatherFeed from './components/WeatherFeed'
 
 const weatherFeed = [
   {
@@ -13,13 +14,7 @@ const weatherFeed = [
 ]
 
 ReactDOM.render(
-  <div>
-    {
-      weatherFeed.map((weatherInfo, key) => {
-        return <div className="weatherFeed" key={key}>high: {weatherInfo.high} low:{weatherInfo.low}</div>
-      })
-    } 
-  </div>,
+  <WeatherFeed weatherFeed={weatherFeed} />,
   document.getElementById('app')
 );
 
