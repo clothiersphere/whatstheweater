@@ -4,8 +4,8 @@ import rootReducer from '../reducers/index';
 
 const logger = createLogger();
 
-const createStoreWithMiddleWare = applyMiddleware(logger)(createStore);
+const createStoreWithMiddleware = applyMiddleware(logger)(createStore);
 
 export default function configureStore(initialState) {
-  return createStore(rootReducer, initialState);
+  return createStoreWithMiddleware(rootReducer, initialState);
 }
