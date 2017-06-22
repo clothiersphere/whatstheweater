@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import WeatherFeed from './components/WeatherFeed'
+import configureStore from './stores/configureStore';
+import * as actions from './actions';
+
+import SetWeather from './components/SetWeather';
 
 const weatherFeed = [
   {
@@ -13,8 +16,11 @@ const weatherFeed = [
   }
 ]
 
+const store = configureStore();
+store.dispatch(actions.setWeather(weatherFeed));
+
 ReactDOM.render(
-  <WeatherFeed weatherFeed={weatherFeed} />,
+  <SetWeather />,
   document.getElementById('app')
 );
 
