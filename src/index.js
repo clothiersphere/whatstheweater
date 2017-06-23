@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import configureStore from './stores/configureStore';
 import * as actions from './actions';
 
@@ -20,7 +21,9 @@ const store = configureStore();
 store.dispatch(actions.setWeather(weatherFeed));
 
 ReactDOM.render(
-  <SetWeather />,
+  <Provider store={store}>
+    <SetWeather />
+  </Provider>,
   document.getElementById('app')
 );
 
