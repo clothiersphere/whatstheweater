@@ -6,7 +6,7 @@ function SetWeather({ weather = [], wunderground }) {
       <div>
         <button onClick={wunderground} type="button">GO</button>
       </div>
-      <br />
+      <br/>
       <div>
       {
         weather.map((weatherInfo, key) => {
