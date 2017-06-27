@@ -8,7 +8,7 @@ import * as actions from './actions';
 import App from './components/App'
 
 import SetWeather from './components/SetWeather';
-import { WUG_KEY } from './constants/auth';
+import { WUG_KEY } from './constants/wug_key';
 
 const weatherFeed = [
   {
