@@ -1,10 +1,10 @@
 import React from 'react';
 
-function SetWeather({ weather = [], wunderground }) {
+function SetWeather({ wugInfo =[], weather = [], wugReq }) {
   return (
     <div>
       <div>
-        <button onClick={wunderground} type="button">GO</button>
+        <button onClick={wugReq} type="button">GO</button>
       </div>
       <br/>
       <div>

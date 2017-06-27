@@ -6,14 +6,16 @@ import SetWeather from './presenter';
 
 function mapStateToProps(state) {
   const weather = state.weather;
+  const wugInfo = state.wugInfo;
   return {
+    wugInfo,
     weather
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    wunderground: bindActionCreators(actions.wunderground, dispatch)
+    wugReq: bindActionCreators(actions.wunderground, dispatch)
   };
 }
 
