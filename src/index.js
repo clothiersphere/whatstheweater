@@ -23,6 +23,7 @@ const weatherFeed = [
 
 const store = configureStore();
 store.dispatch(actions.setWeather(weatherFeed));
+store.dispatch(actions.wunderground());
 
 const history = syncHistoryWithStore(browserHistory, store);
 

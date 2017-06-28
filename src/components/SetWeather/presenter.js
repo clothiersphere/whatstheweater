@@ -1,6 +1,8 @@
 import React from 'react';
+import WundergroundFeed from './WundergroundFeed';
 
-function SetWeather({ weather = [], wugReq }) {
+function SetWeather({ wugInfo, weather = [], wugReq }) {
+  console.log(wugInfo, '/wugInfo')
   return (
     <div>
       <div>
@@ -12,7 +14,10 @@ function SetWeather({ weather = [], wugReq }) {
         weather.map((weatherInfo, key) => {
           return <div className="weatherFeed" key={key}>high: {weatherInfo.high ||  5}</div>
         })
-      } 
+      }
+      </div>
+      <div>
+        <WundergroundFeed weather={wugInfo} />
       </div>
     </div>
   );

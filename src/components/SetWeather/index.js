@@ -17,6 +17,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     wugReq: bindActionCreators(actions.wunderground, dispatch)
+    // wugReq2: dispatch
   };
 }
 
