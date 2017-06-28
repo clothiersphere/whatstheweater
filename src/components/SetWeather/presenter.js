@@ -10,13 +10,6 @@ function SetWeather({ wugInfo, weather = [], wugReq }) {
       </div>
       <br/>
       <div>
-      {
-        weather.map((weatherInfo, key) => {
-          return <div className="weatherFeed" key={key}>high: {weatherInfo.high ||  5}</div>
-        })
-      }
-      </div>
-      <div>
         <WundergroundFeed weather={wugInfo} />
       </div>
     </div>
