@@ -10,12 +10,14 @@ function fetchMe(weather) {
   };
 }
 
-
-
 export function wunderground() {
   return function (dispatch) {
     const url = `http://api.wunderground.com/api/${WUG_KEY}/conditions/q/CA/San_Francisco.json`;
     // axios.get(url).then(response => dispatch(fetchMe(response)));
-    axios.get(url).then(response => console.log(response));
+    axios.get(url).then(response => response.data.current_observation)
+    .then((data) => {
+      // console.log(data)
+      dispatch(fetchMe(data))
+    })
   }
 }
