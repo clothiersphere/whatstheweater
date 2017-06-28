@@ -16,7 +16,6 @@ export function wunderground() {
     // axios.get(url).then(response => dispatch(fetchMe(response)));
     axios.get(url).then(response => response.data.current_observation)
     .then((data) => {
-      // console.log(data)
       dispatch(fetchMe(data))
     })
   }

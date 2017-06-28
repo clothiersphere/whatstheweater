@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SetWeather({ wugInfo =[], weather = [], wugReq }) {
+function SetWeather({ weather = [], wugReq }) {
   return (
     <div>
       <div>
@@ -10,7 +10,7 @@ function SetWeather({ wugInfo =[], weather = [], wugReq }) {
       <div>
       {
         weather.map((weatherInfo, key) => {
-          return <div className="weatherFeed" key={key}>high: {weatherInfo.high} low:{weatherInfo.low}</div>
+          return <div className="weatherFeed" key={key}>high: {weatherInfo.high ||  5}</div>
         })
       } 
       </div>

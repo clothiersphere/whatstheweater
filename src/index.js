@@ -12,13 +12,13 @@ import { WUG_KEY } from './constants/wug_key';
 
 const weatherFeed = [
   {
-    high: '89',
+    // high: '89',
     low: '22'
   },
-  {
-    high: '95',
-    low: '22'
-  }
+  // {
+  //   high: '95',
+  //   low: '22'
+  // }
 ]
 
 const store = configureStore();
