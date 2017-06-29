@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import wunderground from './wunderground';
-import weather from './weather';
+import accuweather from './accuweather';
+import weatherInfo from './weatherInfo';
 
 export default combineReducers({
-  wunderground, 
-  weather,
+  // wunderground, 
+  // accuweather,
+  weatherInfo,
   routing: routerReducer
 })

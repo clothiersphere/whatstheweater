@@ -13,12 +13,13 @@ export default function(state = initialState, action) {
 }
 
 function fetchMe(state, action) {
-  
+  console.log(action, 'WUG')
   const { weather } = action
   return [ ...state, ...weather ];
 }
 
 function accuFetch(state, action) {
+  console.log(action, "ACTION")
   const { weather } = action
   return [ ...state, ...weather];
 }

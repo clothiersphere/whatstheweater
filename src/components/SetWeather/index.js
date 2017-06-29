@@ -8,6 +8,7 @@ function mapStateToProps(state) {
   console.log("state", state)
   const weather = state.weather;
   const wugInfo = state.wunderground;
+  const accuInfo = state.accuweather;
   return {
     wugInfo,
     weather
@@ -17,7 +18,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     wugReq: bindActionCreators(actions.wunderground, dispatch)
-    // wugReq2: dispatch
   };
 }
 

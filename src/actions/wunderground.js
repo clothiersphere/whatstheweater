@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { WUG_KEY } from '../constants/wug_key'
+import { WUG_KEY } from '../constants/apiKeys'
 import * as actionTypes from '../constants/actionTypes'
 
 

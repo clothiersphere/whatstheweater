@@ -6,24 +6,12 @@ import { Provider } from 'react-redux';
 import configureStore from './stores/configureStore';
 import * as actions from './actions';
 import App from './components/App'
-
 import SetWeather from './components/SetWeather';
-import { WUG_KEY } from './constants/wug_key';
-
-const weatherFeed = [
-  {
-    // high: '89',
-    low: '22'
-  },
-  // {
-  //   high: '95',
-  //   low: '22'
-  // }
-]
 
 const store = configureStore();
-store.dispatch(actions.setWeather(weatherFeed));
+// store.dispatch(actions.setWeather(weatherFeed));
 store.dispatch(actions.wunderground());
+store.dispatch(actions.accuweather());
 
 const history = syncHistoryWithStore(browserHistory, store);
 
