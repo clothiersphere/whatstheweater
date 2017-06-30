@@ -2,7 +2,6 @@ import axios from 'axios';
 import { WUG_KEY } from '../constants/apiKeys'
 import * as actionTypes from '../constants/actionTypes'
 
-
 function fetchMe(weather) {
   return {
     type: actionTypes.WUG_REQ,
@@ -13,7 +12,6 @@ function fetchMe(weather) {
 export function wunderground() {
   return function (dispatch) {
     const url = `http://api.wunderground.com/api/${WUG_KEY}/conditions/q/CA/San_Francisco.json`;
-    // axios.get(url).then(response => dispatch(fetchMe(response)));
     axios.get(url).then(response => response.data.current_observation)
     .then((data) => {
       dispatch(fetchMe(data))

@@ -9,7 +9,6 @@ import App from './components/App'
 import SetWeather from './components/SetWeather';
 
 const store = configureStore();
-// store.dispatch(actions.setWeather(weatherFeed));
 store.dispatch(actions.wunderground());
 store.dispatch(actions.accuweather());
 
