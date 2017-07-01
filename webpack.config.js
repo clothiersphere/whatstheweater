@@ -20,8 +20,15 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
+    proxy: {
+      '/api/**': {
+        target: 'http://localhost:1234',
+        secure: false,
+        changeOrigin: true
+      }
+    },
     contentBase: './dist',
     hot: true,
-    historyApiFallback: true
-  }
+    historyApiFallback: true,
+  },
 };

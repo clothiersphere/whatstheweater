@@ -9,9 +9,10 @@ import App from './components/App'
 import SetWeather from './components/SetWeather';
 
 const store = configureStore();
-store.dispatch(actions.wunderground());
+// store.dispatch(actions.wunderground());
 store.dispatch(actions.accuweather());
-store.dispatch(actions.openweather());
+// store.dispatch(actions.openweather());
+// store.dispatch(actions.darksky());
 
 const history = syncHistoryWithStore(browserHistory, store);
 

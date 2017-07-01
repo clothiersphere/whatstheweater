@@ -11,7 +11,6 @@ function fetchOpenWeather(weather) {
 
 export function openweather() {
   return function (dispatch) {
-    // const url = `http://api.openweathermap.org/data/2.5/forecast?id=55391959&APPID=${OPW_KEY}`;
     const url = `http://api.openweathermap.org/data/2.5/weather?APPID=${OPW_KEY}&q=San Francisco,CA`;
     axios.get(url).then(response => response.data)
       .then((data) => {

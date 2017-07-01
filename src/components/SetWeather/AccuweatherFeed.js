@@ -6,7 +6,6 @@ var AccuweatherFeed = (props) => {
       {
       props.weather.map((weather, key) => {
        return <div className="accuInfo" key={key}>
-         {console.log(weather)}
          Accuweather
          <br/>
          UV: {weather.UVIndex}

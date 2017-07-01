@@ -12,6 +12,5 @@ export default function(state = initialState, action) {
 
 function accuFetch(state, action) {
   const { weather } = action
-  console.log(weather, "ACCUWEATHER")
   return [ ...state, ...weather ];
 }

@@ -12,6 +12,5 @@ export default function(state = initialState, action) {
 
 function opwFetch(state, action) {
   const { weather } = action
-  console.log(weather, "OPENWEATHER")
   return [ ...state, weather ];
 }
