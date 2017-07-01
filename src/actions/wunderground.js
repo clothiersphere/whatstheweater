@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { WUG_KEY } from '../constants/apiKeys';
 import * as actionTypes from '../constants/actionTypes';
 
 function fetchWunder(weather) {
@@ -11,11 +10,14 @@ function fetchWunder(weather) {
 
 export function wunderground() {
   return function (dispatch) {
-    const url = `http://api.wunderground.com/api/${WUG_KEY}/conditions/q/CA/San_Francisco.json`;
-    axios.get(url).then(response => response.data.current_observation)
-    .then((data) => {
-      dispatch(fetchWunder(data))
+  const request = axios({
+    method: 'GET',
+    url: 'http://localhost:8080/api/wunderground',
+  });
+
+  return request
+    .then((response) => {
+      dispatch(fetchWunder(response.data))
     })
   }
-};
-
+}
