@@ -11,6 +11,7 @@ import SetWeather from './components/SetWeather';
 const store = configureStore();
 store.dispatch(actions.wunderground());
 store.dispatch(actions.accuweather());
+store.dispatch(actions.openweather());
 
 const history = syncHistoryWithStore(browserHistory, store);
 

@@ -13,3 +13,12 @@
   border-width: 1px;
   margin-right: 50px;
 }
+
+.opwFeed {
+  display: inline-block;
+  position: relative;
+  border-style: solid;
+  border-width: 1px;
+  margin-right: 50px;
+}
+
