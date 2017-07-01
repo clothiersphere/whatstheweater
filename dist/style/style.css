@@ -1,0 +1,15 @@
+.wugFeed {
+  display: inline-block;
+  position: relative;
+  border-style: solid;
+  border-width: 1px;
+  margin-right: 50px;
+}
+
+.accuFeed {
+  display: inline-block;
+  position: relative;
+  border-style: solid;
+  border-width: 1px;
+  margin-right: 50px;
+}

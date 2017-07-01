@@ -7,8 +7,8 @@ var WundergroundFeed = function(props) {
     {
     props.weather.map((weather, key) => {
      return <div className="wugInfo" key={key}> 
-     WUNDERGROUND
-     <br/>
+      Wunderground
+      <br/>
       UV: {weather.UV} 
       <br/>
       TEMP: {weather.temp_f} 

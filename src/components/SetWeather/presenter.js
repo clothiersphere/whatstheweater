@@ -1,7 +1,8 @@
 import React from 'react';
 import WundergroundFeed from './WundergroundFeed';
+import AccuweatherFeed from './AccuweatherFeed';
 
-function SetWeather({ wugInfo, weather = [], wugReq }) {
+function SetWeather({ wugInfo, accuInfo, wugReq }) {
   console.log(wugInfo, '/wugInfo')
   return (
     <div>
@@ -9,8 +10,11 @@ function SetWeather({ wugInfo, weather = [], wugReq }) {
         <button onClick={wugReq} type="button">GO</button>
       </div>
       <br/>
-      <div>
+      <div className="wugFeed">
         <WundergroundFeed weather={wugInfo} />
+      </div>
+      <div className="accuFeed">
+        <AccuweatherFeed weather={accuInfo} />
       </div>
     </div>
   );
