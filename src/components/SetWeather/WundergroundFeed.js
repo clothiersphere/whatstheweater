@@ -1,7 +1,6 @@
 import React from 'react';
 
 var WundergroundFeed = function(props) {
-  console.log(props, "PROPS")
   return (
     <div>
     {

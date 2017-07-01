@@ -8,9 +8,11 @@ function mapStateToProps(state) {
   console.log(state, "STATE")
   const wugInfo = state.wunderground;
   const accuInfo = state.accuweather;
+  const opwInfo = state.openweather;
   return {
     accuInfo,
-    wugInfo
+    wugInfo,
+    opwInfo
   }
 }
 

@@ -1,8 +1,6 @@
 import React from 'react';
 
 var AccuweatherFeed = (props) => {
-
-  
     return (
       <div>
       {
