@@ -14,7 +14,8 @@ function accuweather(req, res, next) {
 }
 
 function wunderground(req, res, next) {
-  const url = `http://api.wunderground.com/api/${apiKeys.WUG_KEY}/conditions/q/CA/San_Francisco.json`;
+  // const url = `http://api.wunderground.com/api/${apiKeys.WUG_KEY}/conditions/q/CA/San_Francisco.json`;
+  const url = `http://api.wunderground.com/api/${apiKeys.WUG_KEY}/conditions/q/37.7787,-122.4212.json`;
   axios.get(url).then(response => response.data.current_observation)
   .then((data) => {
     res.send(data);
