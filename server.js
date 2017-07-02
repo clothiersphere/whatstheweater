@@ -13,6 +13,7 @@ app.get('/jerk', function (req, res) {
 
 app.get('/api/accuweather', weather.accuweather);
 app.get('/api/wunderground', weather.wunderground);
+app.get('/api/darksky', weather.darksky);
 
 app.listen(1234, () => {
   console.log('%s listening at %s', app.name, app.url);

@@ -11,7 +11,15 @@ function fetchDsky(weather) {
 
 export function darksky() {
   return function (dispatch) {
-    const url= `https://api.darksky.net/forecast/${DSKY_KEY}/42.3601,-71.0589`;
-    axios.get(url).then(response => console.log(response, "DSKY RESPONSE"))
+  const request = axios({
+    method: 'GET',
+    url: 'http://localhost:8080/api/darksky',
+  });
+
+  return request
+    .then((response) => {
+      dispatch(fetchDsky(response.data))
+    })
   }
 }
+

@@ -3,7 +3,7 @@ const apiKeys = require('../src/constants/apiKeys');
 
 function accuweather(req, res, next) {
   const url = `http://dataservice.accuweather.com/currentconditions/v1/347629?apikey=${apiKeys.ACCU_KEY}&details=true`;
-  return axios.get(url).then(response => response.data)
+  axios.get(url).then(response => response.data)
   .then((data) => {
     res.send(data);
     next();
@@ -25,7 +25,20 @@ function wunderground(req, res, next) {
   })
 }
 
+function darksky(req, res, next) {
+  const url= `https://api.darksky.net/forecast/${apiKeys.DSKY_KEY}/37.7787,-122.4212`;
+  axios.get(url).then(response => response.data)
+  .then((data) => {
+    res.send(data);
+    next();
+  })
+  .catch((error) => {
+    console.log('ERROR:', error);
+  })
+}
+
   module.exports = {
     accuweather,
-    wunderground
+    wunderground,
+    darksky
   }
