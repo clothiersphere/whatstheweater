@@ -3,8 +3,7 @@ import WundergroundFeed from './WundergroundFeed';
 import AccuweatherFeed from './AccuweatherFeed';
 import DarkskyFeed from './DarkskyFeed';
 
-function SetWeather({ dskyInfo, wugInfo, accuInfo, opwInfo, wugReq }) {
-  console.log(wugInfo, '/wugInfo')
+function SetWeather({ wbitInfo, dskyInfo, wugInfo, accuInfo, opwInfo, wugReq }) {
   return (
     <div>
       <div>

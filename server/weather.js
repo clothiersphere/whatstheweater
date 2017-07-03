@@ -38,8 +38,21 @@ function darksky(req, res, next) {
   })
 }
 
+function weatherbit(req, res, next) {
+  const url= `https://api.weatherbit.io/v1.0/current?lat=37.7787&lon=-122.4212&units=I&key=${apiKeys.WBIT_KEY}`;
+  axios.get(url).then(response => response.data)
+  .then((data) => {
+    res.send(data);
+    next();
+  })
+  .catch((error) => {
+    console.log('ERROR:', error);
+  })
+}
+
   module.exports = {
     accuweather,
     wunderground,
-    darksky
+    darksky,
+    weatherbit
   }
