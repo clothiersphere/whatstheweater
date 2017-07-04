@@ -13,6 +13,11 @@ var DarkskyFeed = function(props) {
           TEMP: {weather.currently.temperature}
           <br/>
           PRECIP: {weather.currently.precipProbability}
+          <br/>
+          Lat: {weather.latitude}
+          <br/>
+          Lng: {weather.longitude}
+
         </div>
       })
     }

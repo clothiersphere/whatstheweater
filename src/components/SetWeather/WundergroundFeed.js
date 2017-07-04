@@ -13,6 +13,10 @@ var WundergroundFeed = function(props) {
       TEMP: {weather.temp_f} 
       <br/>
       PRECIP: {weather.precip_today_metric}
+      <br/>
+      Lat: {weather.observation_location.latitude}
+      <br/>
+      Lng: {weather.observation_location.longitude}
     </div>
     })
     }

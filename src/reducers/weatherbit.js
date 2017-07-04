@@ -5,12 +5,12 @@ const initialState = [];
 export default function(state = initialState, action) {
   switch (action.type) {
     case actionTypes.WBIT_REQ:
-      return accuFetch(state, action);
+      return wbitFetch(state, action);
   }
   return state;
 }
 
-function accuFetch(state, action) {
+function wbitFetch(state, action) {
   const { weather } = action
   return [ ...state, weather ];
 }

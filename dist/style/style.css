@@ -22,3 +22,18 @@
   margin-right: 50px;
 }
 
+.dskyFeed {
+  display: inline-block;
+  position: relative;
+  border-style: solid;
+  border-width: 1px;
+  margin-right: 50px;
+}
+
+.wbitFeed {
+  display: inline-block;
+  position: relative;
+  border-style: solid;
+  border-width: 1px;
+  margin-right: 50px;
+}

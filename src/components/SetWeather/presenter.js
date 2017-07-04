@@ -2,6 +2,7 @@ import React from 'react';
 import WundergroundFeed from './WundergroundFeed';
 import AccuweatherFeed from './AccuweatherFeed';
 import DarkskyFeed from './DarkskyFeed';
+import WeatherbitFeed from './WeatherbitFeed';
 
 function SetWeather({ wbitInfo, dskyInfo, wugInfo, accuInfo, opwInfo, wugReq }) {
   return (
@@ -18,6 +19,9 @@ function SetWeather({ wbitInfo, dskyInfo, wugInfo, accuInfo, opwInfo, wugReq }) 
       </div>
       <div className="accuFeed">
         <AccuweatherFeed weather={accuInfo} />
+      </div>
+       <div className="wbitFeed">
+        <WeatherbitFeed weather={wbitInfo} />
       </div>
     </div>
   );
