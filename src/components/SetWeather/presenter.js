@@ -13,6 +13,9 @@ function SetWeather({ wbitInfo, dskyInfo, wugInfo, accuInfo, opwInfo, wugReq }) 
       <div className="wugFeed">
         <WundergroundFeed weather={wugInfo} />
       </div>
+      <div className="dskyFeed">
+        <DarkskyFeed weather={dskyInfo} />
+      </div>
       <br/>
    
     </div>
@@ -21,9 +24,7 @@ function SetWeather({ wbitInfo, dskyInfo, wugInfo, accuInfo, opwInfo, wugReq }) 
 
 export default SetWeather;
 
-// <div className="dskyFeed">
-//   <DarkskyFeed weather={dskyInfo} />
-// </div>
+
 // <div className="accuFeed">
 //   <AccuweatherFeed weather={accuInfo} />
 // </div>

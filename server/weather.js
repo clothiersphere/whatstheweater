@@ -28,7 +28,7 @@ function wunderground(req, res, next) {
 
 function darksky(req, res, next) {
   const url= `https://api.darksky.net/forecast/${apiKeys.DSKY_KEY}/37.7787,-122.4212`;
-  axios.get(url).then(response => response.data)
+  axios.get(url).then(response => response.data.daily.data)
   .then((data) => {
     res.send(data);
     next();

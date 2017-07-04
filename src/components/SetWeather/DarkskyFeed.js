@@ -1,28 +1,24 @@
 import React from 'react';
 
 var DarkskyFeed = function(props) {
-  return (
+  if (props.weather[0]) {
+    return (
     <div>
+    Darksky
     {
-      props.weather.map((weather, key) => {
+      props.weather[0].map((weather, key) => {
         return <div className="dskyInfo" key={key}> 
-          DarkSky
-          <br/>
-          UV: {weather.currently.uvIndex}
-          <br/>
-          TEMP: {weather.currently.temperature}
-          <br/>
-          PRECIP: {weather.currently.precipProbability}
-          <br/>
-          Lat: {weather.latitude}
-          <br/>
-          Lng: {weather.longitude}
-
+          TEMP: HIGH: {weather.temperatureMax}, LOW: {weather.temperatureMin}
+          PRECIP: {weather.precipProbability}
+          HUMID: {weather.humidity}
         </div>
       })
     }
     </div>
   )
+  } else {
+    return <div> loading.. </div>
+  }
 }
 
 export default DarkskyFeed;
