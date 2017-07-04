@@ -10,21 +10,23 @@ function SetWeather({ wbitInfo, dskyInfo, wugInfo, accuInfo, opwInfo, wugReq }) 
       <div>
         <button onClick={wugReq} type="button">GO</button>
       </div>
-      <br/>
       <div className="wugFeed">
         <WundergroundFeed weather={wugInfo} />
       </div>
-      <div className="dskyFeed">
-        <DarkskyFeed weather={dskyInfo} />
-      </div>
-      <div className="accuFeed">
-        <AccuweatherFeed weather={accuInfo} />
-      </div>
-       <div className="wbitFeed">
-        <WeatherbitFeed weather={wbitInfo} />
-      </div>
+      <br/>
+   
     </div>
   );
 }
 
 export default SetWeather;
+
+// <div className="dskyFeed">
+//   <DarkskyFeed weather={dskyInfo} />
+// </div>
+// <div className="accuFeed">
+//   <AccuweatherFeed weather={accuInfo} />
+// </div>
+//  <div className="wbitFeed">
+//   <WeatherbitFeed weather={wbitInfo} />
+// </div>

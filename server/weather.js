@@ -2,7 +2,7 @@ const axios = require('axios');
 const apiKeys = require('../src/constants/apiKeys');
 
 function accuweather(req, res, next) {
-  const url = `http://dataservice.accuweather.com/currentconditions/v1/347629?apikey=${apiKeys.ACCU_KEY}&details=true`;
+  const url = `http://dataservice.accuweather.com/forecasts/v1/daily/10day/347629?apikey=${apiKeys.ACCU_KEY}&details=true`;
   axios.get(url).then(response => response.data)
   .then((data) => {
     res.send(data);
@@ -15,8 +15,8 @@ function accuweather(req, res, next) {
 
 function wunderground(req, res, next) {
   // const url = `http://api.wunderground.com/api/${apiKeys.WUG_KEY}/conditions/q/CA/San_Francisco.json`;
-  const url = `http://api.wunderground.com/api/${apiKeys.WUG_KEY}/conditions/q/37.7787,-122.4212.json`;
-  axios.get(url).then(response => response.data.current_observation)
+  const url = `http://api.wunderground.com/api/${apiKeys.WUG_KEY}/forecast10day/q/37.7787,-122.4212.json`;
+  axios.get(url).then(response => response.data.forecast.simpleforecast)
   .then((data) => {
     res.send(data);
     next();
@@ -39,7 +39,7 @@ function darksky(req, res, next) {
 }
 
 function weatherbit(req, res, next) {
-  const url= `https://api.weatherbit.io/v1.0/current?lat=37.7787&lon=-122.4212&units=I&key=${apiKeys.WBIT_KEY}`;
+  const url= `https://api.weatherbit.io/v1.0/forecast/3hourly?lat=37.7787&lon=-122.4212&days=5units=I&key=${apiKeys.WBIT_KEY}`;
   axios.get(url).then(response => response.data)
   .then((data) => {
     res.send(data);
