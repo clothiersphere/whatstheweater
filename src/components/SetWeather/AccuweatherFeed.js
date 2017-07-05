@@ -3,16 +3,12 @@ import React from 'react';
 var AccuweatherFeed = (props) => {
   return (
     <div>
+    Accuweather
     {
       props.weather.map((weather, key) => {
         return <div className="accuInfo" key={key}>
-          Accuweather
-          <br/>
-          UV: {weather.UVIndex}
-          <br/>
-          TEMP: {weather.Temperature.Imperial.Value}
-          <br/>
-          PRECIP: {weather.PrecipitationSummary.Precipitation.Metric.Value}
+          TEMP: HIGH:{weather.Temperature.Maximum.Value} LOW:{weather.Temperature.Minimum.Value}
+          PRECIP: {weather.Day.PrecipitationProbability * .01}
         </div>
       })
     } 

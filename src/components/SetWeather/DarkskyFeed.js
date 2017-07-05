@@ -1,6 +1,7 @@
 import React from 'react';
 
 var DarkskyFeed = function(props) {
+  console.log(props, "dskyfeedprops")
   if (props.weather[0]) {
     return (
     <div>

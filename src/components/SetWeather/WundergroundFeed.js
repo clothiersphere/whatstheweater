@@ -1,6 +1,7 @@
 import React from 'react';
 
 var WundergroundFeed = function(props) {
+  console.log(props, "wfeed")
   if (props.weather[0]) {
     return (
       <div>

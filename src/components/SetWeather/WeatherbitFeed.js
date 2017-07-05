@@ -3,21 +3,13 @@ import React from 'react';
 var WeatherbitFeed = function(props) {
   return (
     <div>
+    Weatherbit
     {
-      props.weather.map((weather, key) => {
-        console.log(weather.data, "WEATHERDATA")
+      props.weather[0].map((weather, key) => {
         return <div className="wbitInfo" key={key}> 
-        Weatherbit
-          <br/>
-          UV: {weather.data[0].uv}
-          <br/>
-          TEMP: {weather.data[0].temp}
-          <br/>
-          PRECIP: {weather.data[0].precip || 0}
-          <br/>
-          Lat: {weather.data[0].lat}
-          <br/>
-          Lng: {weather.data[0].lon}
+         {console.log(weather, 'wbitweather')}
+         TEMP: {weather.temp}
+         PRECIP: {weather.pop * .01}
         </div>
       })
     }

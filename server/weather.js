@@ -2,8 +2,8 @@ const axios = require('axios');
 const apiKeys = require('../src/constants/apiKeys');
 
 function accuweather(req, res, next) {
-  const url = `http://dataservice.accuweather.com/forecasts/v1/daily/10day/347629?apikey=${apiKeys.ACCU_KEY}&details=true`;
-  axios.get(url).then(response => response.data)
+  const url = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/347629?apikey=${apiKeys.ACCU_KEY}&details=true`;
+  axios.get(url).then(response => response.data.DailyForecasts)
   .then((data) => {
     res.send(data);
     next();
@@ -39,9 +39,10 @@ function darksky(req, res, next) {
 }
 
 function weatherbit(req, res, next) {
-  const url= `https://api.weatherbit.io/v1.0/forecast/3hourly?lat=37.7787&lon=-122.4212&days=5units=I&key=${apiKeys.WBIT_KEY}`;
-  axios.get(url).then(response => response.data)
+  const url= `https://api.weatherbit.io/v1.0/forecast/3hourly?lat=37.7787&lon=-122.4212&days=5&units=I&key=${apiKeys.WBIT_KEY}`;
+  axios.get(url).then(response => response.data.data)
   .then((data) => {
+    console.log(data, 'WBITDATA')
     res.send(data);
     next();
   })

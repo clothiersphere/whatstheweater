@@ -4,7 +4,7 @@ import AccuweatherFeed from './AccuweatherFeed';
 import DarkskyFeed from './DarkskyFeed';
 import WeatherbitFeed from './WeatherbitFeed';
 
-function SetWeather({ wbitInfo, dskyInfo, wugInfo, accuInfo, opwInfo, wugReq }) {
+function SetWeather({ wbitInfo, dskyInfo, wugInfo, accuInfo, wugReq }) {
   return (
     <div>
       <div>
@@ -16,6 +16,10 @@ function SetWeather({ wbitInfo, dskyInfo, wugInfo, accuInfo, opwInfo, wugReq }) 
       <div className="dskyFeed">
         <DarkskyFeed weather={dskyInfo} />
       </div>
+      <div className="accuFeed">
+        <AccuweatherFeed weather={accuInfo} />
+      </div>
+
       <br/>
    
     </div>
@@ -25,9 +29,7 @@ function SetWeather({ wbitInfo, dskyInfo, wugInfo, accuInfo, opwInfo, wugReq }) 
 export default SetWeather;
 
 
-// <div className="accuFeed">
-//   <AccuweatherFeed weather={accuInfo} />
-// </div>
+
 //  <div className="wbitFeed">
 //   <WeatherbitFeed weather={wbitInfo} />
 // </div>
