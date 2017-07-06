@@ -10,12 +10,14 @@ function mapStateToProps(state) {
   const accuInfo = state.accuweather;
   const dskyInfo = state.darksky;
   const wbitInfo = state.weatherbit;
+  const apixuInfo = state.apixu;
   
   return {
     accuInfo,
     wugInfo,
     dskyInfo,
-    wbitInfo
+    wbitInfo,
+    apixuInfo
   }
 }
 

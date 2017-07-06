@@ -15,6 +15,7 @@ app.get('/api/accuweather', weather.accuweather);
 app.get('/api/wunderground', weather.wunderground);
 app.get('/api/darksky', weather.darksky);
 app.get('/api/weatherbit', weather.weatherbit);
+app.get('/api/apixu', weather.apixu);
 
 app.listen(1234, () => {
   console.log('%s listening at %s', app.name, app.url);

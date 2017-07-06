@@ -6,8 +6,7 @@ var WeatherbitFeed = function(props) {
     Weatherbit
     {
       props.weather[0].map((weather, key) => {
-        return <div className="wbitInfo" key={key}> 
-         {console.log(weather, 'wbitweather')}
+        return <div className="wbitInfo" key={key}>
          TEMP: {weather.temp}
          PRECIP: {weather.pop * .01}
         </div>

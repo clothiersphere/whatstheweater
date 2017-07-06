@@ -13,6 +13,7 @@ store.dispatch(actions.wunderground());
 store.dispatch(actions.darksky());
 store.dispatch(actions.accuweather());
 store.dispatch(actions.weatherbit());
+store.dispatch(actions.apixu());
 
 const history = syncHistoryWithStore(browserHistory, store);
 

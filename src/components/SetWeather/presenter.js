@@ -3,8 +3,9 @@ import WundergroundFeed from './WundergroundFeed';
 import AccuweatherFeed from './AccuweatherFeed';
 import DarkskyFeed from './DarkskyFeed';
 import WeatherbitFeed from './WeatherbitFeed';
+import ApixuFeed from './Apixufeed';
 
-function SetWeather({ wbitInfo, dskyInfo, wugInfo, accuInfo, wugReq }) {
+function SetWeather({ wbitInfo, apixuInfo, dskyInfo, wugInfo, accuInfo, wugReq }) {
   return (
     <div>
       <div>
@@ -19,6 +20,9 @@ function SetWeather({ wbitInfo, dskyInfo, wugInfo, accuInfo, wugReq }) {
       <div className="accuFeed">
         <AccuweatherFeed weather={accuInfo} />
       </div>
+      <div className="apixuFeed">
+        <ApixuFeed weather={apixuInfo} />
+      </div>
 
       <br/>
    
@@ -27,9 +31,3 @@ function SetWeather({ wbitInfo, dskyInfo, wugInfo, accuInfo, wugReq }) {
 }
 
 export default SetWeather;
-
-
-
-//  <div className="wbitFeed">
-//   <WeatherbitFeed weather={wbitInfo} />
-// </div>

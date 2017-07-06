@@ -42,7 +42,6 @@ function weatherbit(req, res, next) {
   const url= `https://api.weatherbit.io/v1.0/forecast/3hourly?lat=37.7787&lon=-122.4212&days=5&units=I&key=${apiKeys.WBIT_KEY}`;
   axios.get(url).then(response => response.data.data)
   .then((data) => {
-    console.log(data, 'WBITDATA')
     res.send(data);
     next();
   })
@@ -51,9 +50,19 @@ function weatherbit(req, res, next) {
   })
 }
 
+function apixu(req, res, next) {
+  const url = `http://api.apixu.com/v1/forecast.json?key=${apiKeys.APIXU_KEY}&q=37.7787,-122.421&days=5`;
+  axios.get(url).then(response => response.data.forecast.forecastday)
+  .then((data => {
+    res.send(data);
+    next();
+  }))
+}
+
   module.exports = {
     accuweather,
     wunderground,
     darksky,
-    weatherbit
+    weatherbit,
+    apixu
   }
