@@ -12,5 +12,5 @@ export default function(state = initialState, action) {
 
 function dskyFetch(state, action) {
   const { weather } = action
-  return [ ...state, weather ];
+  return [ ...state, ...weather ];
 }

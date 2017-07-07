@@ -11,7 +11,7 @@ import SetWeather from './components/SetWeather';
 const store = configureStore();
 store.dispatch(actions.wunderground());
 store.dispatch(actions.darksky());
-store.dispatch(actions.accuweather());
+// store.dispatch(actions.accuweather());
 store.dispatch(actions.weatherbit());
 store.dispatch(actions.apixu());
 
