@@ -11,7 +11,7 @@ var ApixuFeed = function(props) {
           {weather.day.condition.text}
           HIGH:{weather.day.maxtemp_f}, LOW: {weather.day.mintemp_f}
           HUMID: {weather.day.avghumidity}
-          <div className='apixuIcon'><img src={weather.day.condition.icon}/></div>
+          <img src={weather.day.condition.icon}/>
         </div>
       })
     }

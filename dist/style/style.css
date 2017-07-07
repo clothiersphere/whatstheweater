@@ -3,7 +3,7 @@
   position: relative;
   border-style: solid;
   border-width: 1px;
-  margin-right: 50px;
+  margin-right: 25px;
 }
 
 .accuFeed {
@@ -11,7 +11,7 @@
   position: relative;
   border-style: solid;
   border-width: 1px;
-  margin-right: 50px;
+  margin-right: 25px;
 }
 
 .opwFeed {
@@ -19,7 +19,7 @@
   position: relative;
   border-style: solid;
   border-width: 1px;
-  margin-right: 50px;
+  margin-right: 25px;
 }
 
 .dskyFeed {
@@ -27,7 +27,7 @@
   position: relative;
   border-style: solid;
   border-width: 1px;
-  margin-right: 50px;
+  width: 650px;
 }
 
 .wbitFeed {
@@ -35,7 +35,7 @@
   position: relative;
   border-style: solid;
   border-width: 1px;
-  margin-right: 50px;
+  margin-right: 25px;
 }
 
 .apixuFeed {
@@ -43,14 +43,16 @@
   position: relative;
   border-style: solid;
   border-width: 1px;
-  margin-right: 50px;
+  margin-right: 25px;
 }
-.dksyInfo {
+.dskyInfo {
   display: inline-block;
+  position: relative;
 }
 .weatherIcon {
   height: 10%;
   width: 10%;
   display: inline-block;
+  position: relative;
   margin-right: 0px;
 }

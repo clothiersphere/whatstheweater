@@ -10,23 +10,26 @@ var WeatherIcon = React.createClass({
 });
 
 var DarkskyFeed = function(props) {
-  console.log(props, "dskyprops")
   if (props.weather[0]) {
+    var dskyFeed = [];
+    var weather = props.weather
+
+    
+    for (var i = 0; i < 5; i++) {
+      var icon = props.weather[i].icon.toUpperCase().replace(/[-]/g, '_')
+      dskyFeed.push(
+        <div className="dskyInfo" key={i}>
+          {weather[i].summary}
+          HIGH: {weather[i].temperatureMax}, LOW: {weather[i].temperatureMin}
+          PRECIP: {weather[i].precipProbability}
+          HUMID: {weather[i].humidity * 100}          
+          <div className="weatherIcon"><WeatherIcon className="weatherIcon"icon={icon}/></div>
+        </div>
+      )
+    }
     return (
-      <div>
-        Darksky
-        {
-          props.weather.map((weather, key) => {
-            var icon = weather.icon.toUpperCase().replace(/[-]/g, '_')
-            return <div className="dskyInfo" key={key}>
-              {weather.summary} 
-              HIGH: {weather.temperatureMax}, LOW: {weather.temperatureMin}
-              PRECIP: {weather.precipProbability}
-              HUMID: {weather.humidity * 100}
-              <div className="weatherIcon"><WeatherIcon className="weatherIcon"icon={icon}/></div>
-            </div>
-          })
-        }
+      <div className="dskyBox">
+        {dskyFeed}
       </div>
     )
   } else {
@@ -35,3 +38,4 @@ var DarkskyFeed = function(props) {
 }
 
 export default DarkskyFeed;
+
