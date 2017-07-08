@@ -4,7 +4,6 @@ var ApixuFeed = function(props) {
   if (props.weather[0]) {
   return (
     <div>
-    Apixu
     {
       props.weather.map((weather,key) => {
         return <div className='apixuInfo' key={key}>
