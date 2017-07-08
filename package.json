@@ -48,6 +48,7 @@
     "redux": "^3.7.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
-    "skycons": "^1.0.0"
+    "skycons": "^1.0.0",
+    "victory": "^0.21.1"
   }
 }

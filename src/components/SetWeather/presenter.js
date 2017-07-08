@@ -4,7 +4,7 @@ import AccuweatherFeed from './AccuweatherFeed';
 import DarkskyFeed from './DarkskyFeed';
 import WeatherbitFeed from './WeatherbitFeed';
 import ApixuFeed from './Apixufeed';
-
+import MainChart from './MainChart';
 function SetWeather({ wbitInfo, apixuInfo, dskyInfo, wugInfo, accuInfo, wugReq }) {
   return (
     <div>
@@ -23,7 +23,9 @@ function SetWeather({ wbitInfo, apixuInfo, dskyInfo, wugInfo, accuInfo, wugReq }
       <div className="apixuFeed">
         <ApixuFeed weather={apixuInfo} />
       </div>
-
+      <div>
+        <MainChart />
+      </div>
       <br/>
    
     </div>
