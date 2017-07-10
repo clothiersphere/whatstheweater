@@ -31,8 +31,10 @@ const data2015 = [
 ];
 
 
+
 export default class App extends React.Component {
   render() {
+    console.log(this.props, "WUGINFO")
     return (
       <VictoryChart
       domainPadding={20}
@@ -53,16 +55,6 @@ export default class App extends React.Component {
         >
           <VictoryBar
             data={data2013}
-            x="quarter"
-            y="earnings"
-          />
-          <VictoryBar
-            data={data2014}
-            x="quarter"
-            y="earnings"
-          />
-          <VictoryBar
-            data={data2015}
             x="quarter"
             y="earnings"
           />
