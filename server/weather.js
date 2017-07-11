@@ -13,16 +13,10 @@ function accuweather(req, res, next) {
   })
 }
 
-// function parseAccu(data) {
-
-// }
-
 function wunderground(req, res, next) {
-  // const url = `http://api.wunderground.com/api/${apiKeys.WUG_KEY}/conditions/q/CA/San_Francisco.json`;
   const url = `http://api.wunderground.com/api/${apiKeys.WUG_KEY}/forecast10day/q/37.7787,-122.4212.json`;
   axios.get(url).then(response => response.data.forecast.simpleforecast)
   .then((data) => {
-    console.log(parseWug(data));
     res.send(parseWug(data));
     next();
   })

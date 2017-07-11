@@ -11,7 +11,7 @@ export default combineReducers({
   wunderground, 
   accuweather,
   darksky,
-  weatherbit,
+  // weatherbit,
   apixu,
   routing: routerReducer
 })

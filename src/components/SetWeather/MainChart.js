@@ -1,63 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme, VictoryStack } from 'victory';
-
-const data2012 = [
-  {quarter: 1, earnings: 13000},
-  {quarter: 2, earnings: 16500},
-  {quarter: 3, earnings: 14250},
-  {quarter: 4, earnings: 19000}
-];
-
-const data2013 = [
-  {quarter: 1, earnings: 15000},
-  {quarter: 2, earnings: 12500},
-  {quarter: 3, earnings: 19500},
-  {quarter: 4, earnings: 13000}
-];
-
-const data2014 = [
-  {quarter: 1, earnings: 11500},
-  {quarter: 2, earnings: 13250},
-  {quarter: 3, earnings: 20000},
-  {quarter: 4, earnings: 15500}
-];
-
-const data2015 = [
-  {quarter: 1, earnings: 18000},
-  {quarter: 2, earnings: 13250},
-  {quarter: 3, earnings: 15000},
-  {quarter: 4, earnings: 12000}
-];
+import { VictoryLine, VictoryChart, VictoryAxis, VictoryTheme, VictoryStack } from 'victory';
 
 
 
 export default class App extends React.Component {
+
   render() {
-    console.log(this.props, "WUGINFO")
+    var dataWug =[];
+    this.props.wugInfo.map((weather,i) => {
+      dataWug.push({y: parseInt(weather.temp_H), x:i})
+    })
+
+     var dataDsky =[];
+    this.props.dskyInfo.map((weather,i) => {
+      dataDsky.push({y: parseInt(weather.temp_H), x:i})
+    })
+
     return (
       <VictoryChart
-      domainPadding={20}
       theme={VictoryTheme.material}
       >
-        <VictoryAxis
-          // tickValues specifies both the number of ticks and where
-          // they are placed on the axis
-          tickValues={[1, 2, 3, 4]}
-          tickFormat={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4"]}
-        />
-        <VictoryAxis
-          dependentAxis
-          tickFormat={(x) => (`$${x / 1000}k`)}
-        />
         <VictoryStack
-          colorScale={"warm"}
+        
         >
-          <VictoryBar
-            data={data2013}
-            x="quarter"
-            y="earnings"
-          />
+        <VictoryLine
+        domain={{x:[0, 4], y:[0,100]}}
+          data= {dataWug}
+        />
+        <VictoryLine
+        domain={{x:[0, 4], y:[0,100]}}
+          data= {dataDsky}
+        />
         </VictoryStack>
       </VictoryChart>
     )
