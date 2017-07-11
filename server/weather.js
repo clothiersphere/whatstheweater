@@ -1,5 +1,7 @@
 const axios = require('axios');
+var moment = require('moment');
 const apiKeys = require('../src/constants/apiKeys');
+
 
 function accuweather(req, res, next) {
   const url = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/347629?apikey=${apiKeys.ACCU_KEY}&details=true`;
@@ -33,7 +35,8 @@ function parseWug(data) {
       temp_H: data.forecastday[i].high.fahrenheit,
       temp_L: data.forecastday[i].low.fahrenheit,
       precip: data.forecastday[i].pop * .0100,
-      humid: data.forecastday[i].avehumidity
+      humid: data.forecastday[i].avehumidity,
+      dow: data.forecastday[i].date.weekday_short
     })
   }
   return store;
@@ -79,9 +82,9 @@ function weatherbit(req, res, next) {
 
 function apixu(req, res, next) {
   const url = `http://api.apixu.com/v1/forecast.json?key=${apiKeys.APIXU_KEY}&q=37.7787,-122.421&days=5`;
+  // const url = `http://api.apixu.com/v1/forecast.json?key=65f8a2da10b74914b85230418170507&q=94114&days=5`;
   axios.get(url).then(response => response.data.forecast.forecastday)
   .then((data => {
-    console.log(data)
     res.send(parseApixu(data));
     next();
   }))
@@ -90,11 +93,17 @@ function apixu(req, res, next) {
 function parseApixu(data) {
   var store = [];
   for(var i = 0; i< 5; i++) {
+    var date = moment(data[i].date);
+    var dowN = date.day();
+    var dowS = date.format('ddd');
+
     store.push({
       conditions: data[i].day.condition.text,
       temp_H: data[i].day.maxtemp_f,
       temp_L: data[i].day.mintemp_f,
       humid: data[i].day.avghumidity,
+      // date: dowN,
+      dow: dowS
     })
   }
   return store;
