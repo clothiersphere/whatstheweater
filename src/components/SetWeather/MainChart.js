@@ -9,67 +9,102 @@ import { VictoryLine, VictoryChart, VictoryAxis, VictoryTheme, VictoryStack } fr
 export default class App extends React.Component {
 
   render() {
-    
     var dataMin = []
     var dataMax = []
 
-    var dataWug =[];
+    var dataWugTempH =[];
+    var dataWugTempL =[];
     this.props.wugInfo.map((weather,i) => {
-      dataWug.push({y: parseInt(weather.temp_H), x:i})
-      console.log(parseInt(weather.temp_H, "TEMPH"))
+      dataWugTempH.push({y: parseInt(weather.temp_H), x:weather.dow})
+      dataWugTempL.push({y: parseInt(weather.temp_L), x:weather.dow})
       dataMax.push(parseInt(weather.temp_H))
+      dataMin.push(parseInt(weather.temp_L))
     })
 
-    var dataDsky =[];
+    var dataDskyTempH =[];
+    var dataDskyTempL =[];
     this.props.dskyInfo.map((weather,i) => {
-      dataDsky.push({y: parseInt(weather.temp_H), x:i})
+      dataDskyTempH.push({y: parseInt(weather.temp_H), x:weather.dow})
+      dataDskyTempL.push({y: parseInt(weather.temp_L), x:weather.dow})
       dataMax.push(parseInt(weather.temp_H))
+      dataMin.push(parseInt(weather.temp_L))
     })
 
-    var dataApixu =[];
+    var dataApixuTempH =[];
+    var dataApixuTempL =[];
     this.props.apixuInfo.map((weather,i) => {
-      dataApixu.push({y: parseInt(weather.temp_H), x:i})
+      console.log(weather.dow, "weatherDOW")
+      dataApixuTempH.push({y: parseInt(weather.temp_H), x:weather.dow})
+      dataApixuTempL.push({y: parseInt(weather.temp_L), x:weather.dow})
       dataMax.push(parseInt(weather.temp_H))
+      dataMin.push(parseInt(weather.temp_L))
     })
 
-    const yMax = (Math.max(...dataMax));
-    const yMin = (Math.min(...dataMax))-3;
+    const maxDataMax = (Math.max(...dataMax))+2;
+    const minDataMax = (Math.min(...dataMax))-2;
+    const maxDataMin = (Math.max(...dataMin))+2;
+    const minDataMin = (Math.min(...dataMin))-2;
 
+    if (maxDataMax) {
     return (
-      <VictoryChart
-      theme={VictoryTheme.material}
-      domain={{x:[0, 4], y:[yMin, yMax]}}
-
-      >
-        
-        <VictoryLine
-        
-        data= {dataDsky}
-        interpolation="linear"
-        labels={(d) => d.y}
-        style={{
-          label: { }
-        }}  
-        />
-        <VictoryLine
-        style={{
-              data: { stroke: "#c43a31" },
-              parent: { border: "1px solid #ccc"}
-            }}
-        data= {dataWug}
-        interpolation="linear"
-        labels={(d) => d.y}
-        
-        />
-        <VictoryLine
-        data= {dataApixu}
-        interpolation="linear"
-        labels={(d) => d.y}
+      <div>
+        <div>
+          <VictoryChart
+          theme={VictoryTheme.material}
+          domain={{x:[0, 6], y:[minDataMax, maxDataMax]}}
+          >
+            <VictoryLine
+            data= {dataDskyTempH}
+            interpolation="linear"
+            labels={(d) => d.y}
+            />
+            <VictoryLine
+            data= {dataWugTempH}
+            interpolation="linear"
+            labels={(d) => d.y}
+            
+            />
+            <VictoryLine
+            data= {dataApixuTempH}
+            interpolation="linear"
+            labels={(d) => d.y}
+              
+            />
           
-        />
-      
-      </VictoryChart>
+          </VictoryChart>
+        </div>
+        <div>
+        
+          <VictoryChart
+          theme={VictoryTheme.material}
+          domain={{x:[0, 6], y:[minDataMin, maxDataMin]}}
+
+          >
+            <VictoryLine
+            data= {dataDskyTempL}
+            interpolation="linear"
+            labels={(d) => d.y}
+            />
+            <VictoryLine
+            data= {dataWugTempL}
+            interpolation="linear"
+            labels={(d) => d.y}
+            
+            />
+            <VictoryLine
+            data= {dataApixuTempL}
+            interpolation="linear"
+            labels={(d) => d.y}
+              
+            />
+          
+          </VictoryChart>
+        </div>
+      </div>
     )
+    } else {
+      return <div> loading..</div>
+    }
   }
 }
 

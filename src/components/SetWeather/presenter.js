@@ -9,12 +9,14 @@ function SetWeather({ wbitInfo, apixuInfo, dskyInfo, wugInfo, accuInfo, wugReq }
   return (
     <div>
       <div>
+      </div>
+      <div>
         <button onClick={wugReq} type="button">GO</button>
       </div>
       <div className="wugFeed">
         <WundergroundFeed weather={wugInfo} />
       </div>
-      <div>
+      <div className="mainChart">
         <MainChart 
           wugInfo = {wugInfo}
           dskyInfo = {dskyInfo}
