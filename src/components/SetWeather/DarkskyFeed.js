@@ -6,7 +6,7 @@ var DarkskyFeed = function(props) {
       <div>
       { 
         props.weather.map((weather, key) => {
-          return <div className="wugInfo" key={key}>
+          return <div className="dskyInfo" key={key}>
             {weather.conditions}
             high:{weather.temp_H}
             low:{weather.temp_L}

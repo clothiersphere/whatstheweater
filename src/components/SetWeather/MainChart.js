@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import moment from 'moment';
 
-import { VictoryLine, VictoryChart, VictoryAxis, VictoryTheme, VictoryStack, VictoryBar } from 'victory';
+import { VictoryLine, VictoryChart, VictoryAxis, VictoryTheme, VictoryStack, VictoryArea } from 'victory';
 
 export default class App extends React.Component {
 
@@ -47,63 +47,67 @@ export default class App extends React.Component {
       <div>
         <div className="tempHchart">
           <VictoryChart
-          theme={VictoryTheme.material}
+          // theme={VictoryTheme.material}
           domain={{x:[0, 6], y:[minDataMax, maxDataMax]}}
           >
             <VictoryLine
-            data= {dataDskyTempH}
-            interpolation="natural"
-            labels={(d) => d.y}
-            style={{
-              data: { stroke: '#9DD9D2'}
-            }}
-            />
-            <VictoryLine
+            
             data= {dataWugTempH}
-            interpolation="natural"
+            // interpolation="natural"
             labels={(d) => d.y}
             style={{
-              data: { stroke: '#5EC2B7'}
+              data: { 
+                stroke: '#CCFCCB',
+                strokeWidth: 5
+              }
             }}
             />
             <VictoryLine
             data= {dataApixuTempH}
-            interpolation="natural"
+            // interpolation="natural"
             labels={(d) => d.y}
             style={{
-              data: { stroke: '#2CA6A4'}
+              data: { stroke: '#FFBFA4', strokeWidth: 5}
+            }}
+            />
+            <VictoryLine            
+            data= {dataDskyTempH}
+            // interpolation="natural"
+            labels={(d) => d.y}
+            style={{
+              data: { stroke: '#EFEBCE', strokeWidth: 5}
             }}
             />
           </VictoryChart>
         </div>
         <div className="tempLchart">
           <VictoryChart
-          theme={VictoryTheme.material}
+          // theme={VictoryTheme.material}
           domain={{x:[0, 6], y:[minDataMin, maxDataMin]}}
 
           >
             <VictoryLine
-              data= {dataDskyTempL}
-              interpolation="natural"
-              labels={(d) => d.y}
-              style={{
-              data: { stroke: '#9DD9D2'}
-              }}
-            />
-            <VictoryLine
               data= {dataWugTempL}
-              interpolation="natural"
+              // interpolation="natural"
               labels={(d) => d.y}
               style={{
-                data: { stroke: '#5EC2B7'}
+              data: { stroke: '#CCFCCB', strokeWidth: 5}
               }}
             />
             <VictoryLine
               data= {dataApixuTempL}
-              interpolation="natural"
+              // interpolation="natural"
               labels={(d) => d.y}
               style={{
-              data: { stroke: '#2CA6A4'}
+                data: { stroke: '#FFBFA4', strokeWidth: 5}
+              }}
+            />
+            <VictoryLine
+              data= {dataDskyTempL}
+              // interpolation="natural"
+              labels={(d) => d.y}
+              style={{
+              data: { stroke: '#EFEBCE', strokeWidth: 5}
             }}
             />
           </VictoryChart>

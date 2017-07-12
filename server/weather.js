@@ -24,6 +24,7 @@ function wunderground(req, res, next) {
   axios.get(url).then(response => response.data.forecast.simpleforecast)
   .then((data) => {
     res.send(parseWug(data));
+    // res.send(data);
     next();
   })
   .catch((error) => {
@@ -34,13 +35,18 @@ function wunderground(req, res, next) {
 function parseWug(data) {
   var store = [];
   for(var i = 0; i< 5; i++) {
+
+    var date = moment.unix(data.forecastday[i].date.epoch);
+    var dowN = date.day();
+    var dowS = date.format('ddd DD');
+
     store.push({
       conditions: data.forecastday[i].conditions,
       temp_H: data.forecastday[i].high.fahrenheit,
       temp_L: data.forecastday[i].low.fahrenheit,
       precip: data.forecastday[i].pop * .0100,
       humid: data.forecastday[i].avehumidity,
-      dow: data.forecastday[i].date.weekday_short
+      dow: dowS
     })
   }
   return store;
@@ -62,8 +68,9 @@ function parseDsky(data) {
   var store = [];
   for(var i = 0; i< 5; i++) {
     var date = moment.unix(data[i].time);
+
     var dowN = date.day();
-    var dowS = date.format('ddd');
+    var dowS = date.format('ddd DD');
 
     store.push({
       conditions: data[i].summary,
@@ -104,7 +111,7 @@ function parseApixu(data) {
   for(var i = 0; i< 5; i++) {
     var date = moment(data[i].date);
     var dowN = date.day();
-    var dowS = date.format('ddd');
+    var dowS = date.format('ddd DD');
 
     store.push({
       conditions: data[i].day.condition.text,

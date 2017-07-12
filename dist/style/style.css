@@ -4,6 +4,7 @@
   border-style: solid;
   border-width: 1px;
   margin-right: 25px;
+  background: #CCFCCB;
 }
 
 .accuFeed {
@@ -28,6 +29,7 @@
   border-style: solid;
   border-width: 1px;
   width: 650px;
+  background: #EFEBCE;
 }
 
 .wbitFeed {
@@ -44,6 +46,7 @@
   border-style: solid;
   border-width: 1px;
   margin-right: 25px;
+  background: #FFBFA4;
 }
 .dskyInfo {
   display: inline-block;
@@ -57,16 +60,18 @@
   margin-right: 0px;
 }
 
-.mainChart {
-  height:40%;
+/*.mainChart {
+  width:40%;
 }
-
+*/
 .tempHchart {
   display:inline-block;
   position: relative;
+  width:30%;
 }
 
 .tempLchart {
   display:inline-block;
   position: relative;
+  width:30%;
 }
