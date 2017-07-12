@@ -2,9 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import moment from 'moment';
 
-import { VictoryLine, VictoryChart, VictoryAxis, VictoryTheme, VictoryStack } from 'victory';
-
-
+import { VictoryLine, VictoryChart, VictoryAxis, VictoryTheme, VictoryStack, VictoryBar } from 'victory';
 
 export default class App extends React.Component {
 
@@ -33,7 +31,6 @@ export default class App extends React.Component {
     var dataApixuTempH =[];
     var dataApixuTempL =[];
     this.props.apixuInfo.map((weather,i) => {
-      console.log(weather.dow, "weatherDOW")
       dataApixuTempH.push({y: parseInt(weather.temp_H), x:weather.dow})
       dataApixuTempL.push({y: parseInt(weather.temp_L), x:weather.dow})
       dataMax.push(parseInt(weather.temp_H))
@@ -46,65 +43,76 @@ export default class App extends React.Component {
     const minDataMin = (Math.min(...dataMin))-2;
 
     if (maxDataMax) {
-    return (
+      return (
       <div>
-        <div>
+        <div className="tempHchart">
           <VictoryChart
           theme={VictoryTheme.material}
           domain={{x:[0, 6], y:[minDataMax, maxDataMax]}}
           >
             <VictoryLine
             data= {dataDskyTempH}
-            interpolation="linear"
+            interpolation="natural"
             labels={(d) => d.y}
+            style={{
+              data: { stroke: '#9DD9D2'}
+            }}
             />
             <VictoryLine
             data= {dataWugTempH}
-            interpolation="linear"
+            interpolation="natural"
             labels={(d) => d.y}
-            
+            style={{
+              data: { stroke: '#5EC2B7'}
+            }}
             />
             <VictoryLine
             data= {dataApixuTempH}
-            interpolation="linear"
+            interpolation="natural"
             labels={(d) => d.y}
-              
+            style={{
+              data: { stroke: '#2CA6A4'}
+            }}
             />
-          
           </VictoryChart>
         </div>
-        <div>
-        
+        <div className="tempLchart">
           <VictoryChart
           theme={VictoryTheme.material}
           domain={{x:[0, 6], y:[minDataMin, maxDataMin]}}
 
           >
             <VictoryLine
-            data= {dataDskyTempL}
-            interpolation="linear"
-            labels={(d) => d.y}
+              data= {dataDskyTempL}
+              interpolation="natural"
+              labels={(d) => d.y}
+              style={{
+              data: { stroke: '#9DD9D2'}
+              }}
             />
             <VictoryLine
-            data= {dataWugTempL}
-            interpolation="linear"
-            labels={(d) => d.y}
-            
+              data= {dataWugTempL}
+              interpolation="natural"
+              labels={(d) => d.y}
+              style={{
+                data: { stroke: '#5EC2B7'}
+              }}
             />
             <VictoryLine
-            data= {dataApixuTempL}
-            interpolation="linear"
-            labels={(d) => d.y}
-              
+              data= {dataApixuTempL}
+              interpolation="natural"
+              labels={(d) => d.y}
+              style={{
+              data: { stroke: '#2CA6A4'}
+            }}
             />
-          
           </VictoryChart>
         </div>
+        
       </div>
-    )
+      )
     } else {
       return <div> loading..</div>
     }
   }
 }
-

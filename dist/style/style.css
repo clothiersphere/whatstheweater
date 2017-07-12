@@ -56,3 +56,17 @@
   position: relative;
   margin-right: 0px;
 }
+
+.mainChart {
+  height:40%;
+}
+
+.tempHchart {
+  display:inline-block;
+  position: relative;
+}
+
+.tempLchart {
+  display:inline-block;
+  position: relative;
+}

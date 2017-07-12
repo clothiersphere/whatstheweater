@@ -7,10 +7,11 @@ var ApixuFeed = function(props) {
     {
       props.weather.map((weather,key) => {
         return <div className='apixuInfo' key={key}>
-          {weather.day.condition.text}
-          HIGH:{weather.day.maxtemp_f}, LOW: {weather.day.mintemp_f}
-          HUMID: {weather.day.avghumidity}
-          <img src={weather.day.condition.icon}/>
+          {weather.conditions}
+          high:{weather.temp_H}
+          low:{weather.temp_L}
+          humidity:{weather.humid} 
+          precipitation:{weather.precip}
         </div>
       })
     }
