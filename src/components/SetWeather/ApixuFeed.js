@@ -11,7 +11,7 @@ var ApixuFeed = function(props) {
           high:{weather.temp_H}
           low:{weather.temp_L}
           humidity:{weather.humid} 
-          precipitation:{weather.precip}
+          totPrecip:{weather.totalPrecipitation}
         </div>
       })
     }

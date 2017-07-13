@@ -1,16 +1,15 @@
 .wugFeed {
   display: inline-block;
   position: relative;
-  border-style: solid;
   border-width: 1px;
   margin-right: 25px;
   background: #CCFCCB;
+  width: 30%;
 }
 
 .accuFeed {
   display: inline-block;
   position: relative;
-  border-style: solid;
   border-width: 1px;
   margin-right: 25px;
 }
@@ -18,7 +17,6 @@
 .opwFeed {
   display: inline-block;
   position: relative;
-  border-style: solid;
   border-width: 1px;
   margin-right: 25px;
 }
@@ -26,16 +24,14 @@
 .dskyFeed {
   display: inline-block;
   position: relative;
-  border-style: solid;
   border-width: 1px;
-  width: 650px;
   background: #EFEBCE;
+  width: 30%;
 }
 
 .wbitFeed {
   display: inline-block;
   position: relative;
-  border-style: solid;
   border-width: 1px;
   margin-right: 25px;
 }
@@ -43,15 +39,12 @@
 .apixuFeed {
   display: inline-block;
   position: relative;
-  border-style: solid;
   border-width: 1px;
   margin-right: 25px;
   background: #FFBFA4;
+  width: 30%;
 }
-.dskyInfo {
-  display: inline-block;
-  position: relative;
-}
+
 .weatherIcon {
   height: 10%;
   width: 10%;
@@ -60,18 +53,14 @@
   margin-right: 0px;
 }
 
-/*.mainChart {
-  width:40%;
-}
-*/
 .tempHchart {
   display:inline-block;
   position: relative;
-  width:30%;
+  width:33%;
 }
 
 .tempLchart {
   display:inline-block;
   position: relative;
-  width:30%;
+  width:33%;
 }

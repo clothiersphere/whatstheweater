@@ -46,6 +46,7 @@ export default class App extends React.Component {
       return (
       <div>
         <div className="tempHchart">
+        High
           <VictoryChart
           // theme={VictoryTheme.material}
           domain={{x:[0, 6], y:[minDataMax, maxDataMax]}}
@@ -81,6 +82,7 @@ export default class App extends React.Component {
           </VictoryChart>
         </div>
         <div className="tempLchart">
+        Low
           <VictoryChart
           // theme={VictoryTheme.material}
           domain={{x:[0, 6], y:[minDataMin, maxDataMin]}}

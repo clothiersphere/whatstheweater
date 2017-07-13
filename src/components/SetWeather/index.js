@@ -5,7 +5,6 @@ import * as actions from '../../actions';
 import SetWeather from './presenter';
 
 function mapStateToProps(state) {
-  console.log(state, "STATE")
   const wugInfo = state.wunderground;
   const accuInfo = state.accuweather;
   const dskyInfo = state.darksky;

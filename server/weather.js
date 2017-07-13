@@ -57,6 +57,7 @@ function darksky(req, res, next) {
   axios.get(url).then(response => response.data.daily.data)
   .then((data) => {
     res.send(parseDsky(data));
+    // res.send(data);
     next();
   })
   .catch((error) => {
@@ -78,6 +79,7 @@ function parseDsky(data) {
       temp_L: data[i].temperatureMin,
       precip: data[i].precipProbability,
       humid: data[i].humidity * 100,
+      windSpeed: data[i].windSpeed,
       dow: dowS
     })
   }
@@ -101,6 +103,7 @@ function apixu(req, res, next) {
   // const url = `http://api.apixu.com/v1/forecast.json?key=${apiKeys.APIXU_KEY}&q=auto:ip&days=5`;
   axios.get(url).then(response => response.data.forecast.forecastday)
   .then((data => {
+    // res.send(data);
     res.send(parseApixu(data));
     next();
   }))
@@ -118,6 +121,8 @@ function parseApixu(data) {
       temp_H: data[i].day.maxtemp_f,
       temp_L: data[i].day.mintemp_f,
       humid: data[i].day.avghumidity,
+      totalPrecipitation: data[i].day.totalprecip_in,
+      maxwind_mph: data[i].day.maxwind_mph,
       dow: dowS
     })
   }

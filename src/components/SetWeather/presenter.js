@@ -5,14 +5,11 @@ import DarkskyFeed from './DarkskyFeed';
 import WeatherbitFeed from './WeatherbitFeed';
 import ApixuFeed from './Apixufeed';
 import MainChart from './MainChart';
+import ZipInput from './ZipInput';
+
 function SetWeather({ wbitInfo, apixuInfo, dskyInfo, wugInfo, accuInfo, wugReq }) {
   return (
     <div>
-      <div>
-      </div>
-      <div>
-        <button onClick={wugReq} type="button">GO</button>
-      </div>
       <div className="wugFeed">
         <WundergroundFeed weather={wugInfo} />
       </div>
@@ -28,6 +25,9 @@ function SetWeather({ wbitInfo, apixuInfo, dskyInfo, wugInfo, accuInfo, wugReq }
           dskyInfo = {dskyInfo}
           apixuInfo = {apixuInfo}
         />
+      </div>
+      <div className="zipInput">
+        <ZipInput/>
       </div>
       <br/>
    
