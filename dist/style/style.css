@@ -1,48 +1,41 @@
 .wugFeed {
-  display: inline-block;
+  /*display: inline-block;*/
   position: relative;
   border-width: 1px;
-  margin-right: 25px;
   background: #CCFCCB;
-  width: 30%;
 }
 
 .accuFeed {
-  display: inline-block;
+  /*display: inline-block;*/
   position: relative;
   border-width: 1px;
-  margin-right: 25px;
 }
 
 .opwFeed {
   display: inline-block;
   position: relative;
   border-width: 1px;
-  margin-right: 25px;
 }
 
 .dskyFeed {
-  display: inline-block;
+  /*display: inline-block;*/
   position: relative;
   border-width: 1px;
   background: #EFEBCE;
-  width: 30%;
+  border-color: : #EFEBCE;
 }
 
 .wbitFeed {
   display: inline-block;
   position: relative;
   border-width: 1px;
-  margin-right: 25px;
 }
 
 .apixuFeed {
-  display: inline-block;
+  /*display: inline-block;*/
   position: relative;
   border-width: 1px;
-  margin-right: 25px;
   background: #FFBFA4;
-  width: 30%;
 }
 
 .weatherIcon {
@@ -63,4 +56,23 @@
   display:inline-block;
   position: relative;
   width:33%;
+}
+
+.apixuInfo {
+  display: inline-block;
+  position: relative;
+}
+
+.dskyInfo {
+  display: inline-block;
+  position: relative;
+}
+
+.wugInfo {
+  display: inline-block;
+  position: relative;
+}
+
+.skyconIcon {
+  width: 75px;
 }

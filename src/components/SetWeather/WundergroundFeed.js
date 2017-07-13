@@ -7,11 +7,21 @@ var WundergroundFeed = function(props) {
       { 
         props.weather.map((weather, key) => {
           return <div className="wugInfo" key={key}>
-            {weather.conditions}
-            high:{weather.temp_H}
-            low:{weather.temp_L}
-            humidity:{weather.humid} 
-            precipitation:{weather.precip}
+            <div>
+              <img src={weather.icon}/>
+            </div>
+            <div> 
+              high:{weather.temp_H}
+            </div>
+            <div>
+              low:{weather.temp_L}
+            </div>
+            <div>
+              humidity:{weather.humid} 
+            </div>
+            <div>
+              precip:{weather.precip}
+            </div>
           </div>
         })
       }

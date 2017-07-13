@@ -46,6 +46,7 @@ function parseWug(data) {
       temp_L: data.forecastday[i].low.fahrenheit,
       precip: data.forecastday[i].pop * .0100,
       humid: data.forecastday[i].avehumidity,
+      icon: data.forecastday[i].icon_url, 
       dow: dowS
     })
   }
@@ -69,9 +70,9 @@ function parseDsky(data) {
   var store = [];
   for(var i = 0; i< 5; i++) {
     var date = moment.unix(data[i].time);
-
     var dowN = date.day();
     var dowS = date.format('ddd DD');
+    var skyconIcon = data[i].icon.replace(/-/g,'_').toUpperCase();
 
     store.push({
       conditions: data[i].summary,
@@ -80,6 +81,7 @@ function parseDsky(data) {
       precip: data[i].precipProbability,
       humid: data[i].humidity * 100,
       windSpeed: data[i].windSpeed,
+      icon: skyconIcon,
       dow: dowS
     })
   }
@@ -123,6 +125,7 @@ function parseApixu(data) {
       humid: data[i].day.avghumidity,
       totalPrecipitation: data[i].day.totalprecip_in,
       maxwind_mph: data[i].day.maxwind_mph,
+      icon: data[i].day.condition.icon,
       dow: dowS
     })
   }
